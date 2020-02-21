@@ -1,38 +1,74 @@
-.App {
-  text-align: center;
+/**************************************************************
+* App main CSS (Theme)
+* @author Eduardo Pereira do Carmo
+* @link https://github.com/eduardopcarmo
+**************************************************************/
+
+/**************************************************************
+* Variables
+**************************************************************/
+* {
+  /*Font size Base*/
+  --font-base-size: 20px;
+  
+  /*Colors*/
+  --font-base-color: #4e486c;
+  --header-bg-color: purple;
+  --header-font-color: #ffffff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/**************************************************************
+* Typography
+**************************************************************/
+html {
+  /*for using REM units*/
+  font-size: var(--font-base-size);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  line-height: 1.3em;
+  color: var(--font-base-color);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  font-size: 2.3rem;
+  line-height: 1.5em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h2 {
+  font-size: 2.1rem;
+  line-height: 1.5em;
+}
+
+/**************************************************************
+* Main Container
+**************************************************************/
+#root {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+}
+
+/**************************************************************
+* Header
+**************************************************************/
+header {
+  background-color: var(--header-bg-color);
+  color: var(--header-font-color);
+}
+
+header>nav.header {
+  max-width: 1024px;
+  margin: 0 auto;
 }

@@ -1,0 +1,39 @@
+/**************************************************************
+* @component Header
+* @author Eduardo Pereira do Carmo
+* @link https://github.com/eduardopcarmo
+**************************************************************/
+header>nav.header {
+    padding: 5px 0 5px 0;
+    display: grid;
+    grid-template-columns: auto auto;
+
+    /*Variables*/
+    --link-height: 40px
+}
+
+header>nav.header>.header__logo {
+    height: var(--link-height);
+}
+
+header>nav.header>.header__toggle {
+    height: var(--link-height);
+    display: none;
+}
+
+header>nav.header>.header__logo>img {
+    height: var(--link-height);
+}
+
+header>nav.header>.header__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    min-height: var(--link-height);
+}
+header>nav.header>.header__list>li>a{
+    display: flex;
+    align-items: center;
+    min-height: var(--link-height);
+    padding-left: 20px;
+}
