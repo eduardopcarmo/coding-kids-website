@@ -1,10 +1,12 @@
+// React
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 
 class Footer extends Component{
     render(){
         return (
             <footer className="footer">
-                <p>Footer</p>
+                <Link to="/login" className="footer__link">Login</Link>
             </footer>
         );
     }
