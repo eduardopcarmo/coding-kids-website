@@ -33,7 +33,7 @@ class Login extends Component{
 
         // [TODO] ADD LOADING
         this.setState({
-            feedback: "Executing authentication..."
+            feedback: ["Executing authentication..."]
         });
 
         // Execut the authentication
@@ -44,25 +44,25 @@ class Login extends Component{
                 && result.status != null
                 && result.status.id === 200){
                     this.setState({
-                        feedback: 'User authorized',
+                        feedback: ['User authorized'],
                         auth: true
                     });
             }else if(result != null 
                     && result.status != null){
                     this.setState({
-                        feedback: result.status.errors.map(error => error + ', '),
+                        feedback: result.status.errors,
                         auth: false
                     });
             }else{
                 this.setState({
-                    feedback: 'The username/password specified is not valid',
+                    feedback: ['The username/password specified is not valid'],
                     auth: false
                 });
             }
         })
         .catch((error) => {
             this.setState({
-                feedback: 'An error occurred, please try again later',
+                feedback: ['An error occurred, please try again later'],
                 auth: false
             });
         });
@@ -71,14 +71,22 @@ class Login extends Component{
     renderRedirect(){
         if (this.state.auth) {
             return <Redirect to='/dashboard' />
-        }else{
-            return (
-                <div>
-                    {this.state.feedback}
-                </div>
-            )
         }
       }
+
+    renderFeedback(){
+        return (
+            <div>
+                <ul>
+                    {       
+                        this.state.feedback.map(function(name, index){
+                            return <li key={ index }>{name}</li>;
+                        })
+                    }
+                </ul>
+            </div>
+        )
+    }
 
     render(){
         return (

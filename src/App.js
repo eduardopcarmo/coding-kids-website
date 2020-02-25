@@ -6,10 +6,10 @@ import { BrowserRouter, Route, Switch, Redirect  } from 'react-router-dom'
 import { getAuthorization } from './core/authorization';
 
 // Header
-import Header from './components/common/header';
+import Header from './components/header';
 
 // Footer
-import Footer from './components/common/footer';
+import Footer from './components/footer';
 
 // Routes
 import Home from './routes/home';

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 
 // Logo
-import logo from '../../assets/img/codingkids_logo.png'; // with import
+import logo from '../assets/img/codingkids_logo.png'; // with import
 
 // CSS
 import './header.css';

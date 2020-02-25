@@ -2,11 +2,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 
+// CSS
+import './footer.css';
+
 class Footer extends Component{
     render(){
         return (
             <footer className="footer">
-                <Link to="/login" className="footer__link">Login</Link>
+                <Link to="/Dashboard" className="footer__link">Dashboard</Link>
             </footer>
         );
     }
