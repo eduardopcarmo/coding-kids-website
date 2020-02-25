@@ -211,7 +211,7 @@ class Dashboard extends Component{
                                             <td>{item.note}</td>
                                             <td>
                                                 <Button 
-                                                    classList="edu" 
+                                                    classList="primary" 
                                                     action={(e) => this.setAsDone(e, item.id)}
                                                     dataKey={item.id}
                                                     text="Mark as Done" />

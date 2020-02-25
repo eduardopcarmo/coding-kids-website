@@ -8,13 +8,17 @@
 * Variables
 **************************************************************/
 * {
-  /*Font size Base*/
-  --font-base-size: 20px;
-  
   /*Colors*/
-  --font-base-color: #4e486c;
-  --header-bg-color: purple;
-  --header-font-color: #ffffff;
+  --color-dominant: #7568AF;
+  --color-dominant-dark: #514A72;
+  --color-accent: #E2BE6E;
+  --color-accent-dark: #E2BE6E;
+  --color-neutral: #231f20;
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  /*Typography*/
+  --typo-base-size: 16px;
 }
 
 /**************************************************************
@@ -22,14 +26,15 @@
 **************************************************************/
 html {
   /*for using REM units*/
-  font-size: var(--font-base-size);
+  font-size: var(--typo-base-size);
 }
 
 body {
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: 400;
-  line-height: 1.3em;
-  color: var(--font-base-color);
+  font-family: 'Ubuntu';
+  font-weight: 300;
+  letter-spacing: 1px;
+  line-height: 2.25em;
+  color: var(--typo-base-size);
 }
 
 h1,
@@ -38,17 +43,20 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 700;
+  font-family: 'Montserrat';
+  font-weight: 900;
 }
 
 h1 {
-  font-size: 2.3rem;
-  line-height: 1.5em;
+  font-size: 3.2em;
+  color: var(--color-dominant);
 }
 
 h2 {
-  font-size: 2.1rem;
-  line-height: 1.5em;
+  font-size: 1.7em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-accent);
 }
 
 /**************************************************************
@@ -64,11 +72,120 @@ h2 {
 * Header
 **************************************************************/
 header {
-  background-color: var(--header-bg-color);
-  color: var(--header-font-color);
+  background: var(--color-dominant);
+  background: linear-gradient(90deg, var(--color-dominant) 0%, var(--color-dominant-dark) 100%);
+  color: var(--color-white);
+  margin-bottom: 2em;
 }
 
 header>nav.header {
-  max-width: 1024px;
-  margin: 0 auto;
+  padding: 0.7em 0.7em 0em 0.7em;
+}
+
+header>nav.header>a.header__logo,
+header>nav.header>a.header__logo img,
+header>nav.header>button.header__toggle {
+  height: 3em;
+  display: inline-block;
+  line-height: 1.5;
+}
+
+header>nav.header>button.header__toggle {
+  float: right;
+}
+
+header>nav.header>button.header__toggle .hamburger {
+  font-size: 2em;
+}
+
+header>nav.header>ul.header__list {
+  background: var(--color-dominant);
+  background: linear-gradient(90deg, var(--color-dominant) 0%, var(--color-dominant-dark) 100%);
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100vh;
+  padding-top: 3em;
+  /*animation-duration: 2s;
+  animation-name: headerOpenMenu;*/
+
+}
+
+header>nav.header>ul.header__list>.header__item {
+  padding: 0 3em;
+  border-bottom: 1px solid var(--color-white);
+
+}
+
+header>nav.header>ul.header__list>.header__item>a {
+  display: inline-block;
+  width: 100%;
+}
+
+header>nav.header>ul.header__list>.header__item__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+header>nav.header>ul.header__list>.header__item__close>button.header__item__close__button {
+  width: 3em;
+  height: 3em;
+}
+
+@keyframes headerOpenMenu {
+  from {left: 100%;}
+  to {left: 0;}
+}
+
+@media only screen and (min-width: 768px){
+  header>nav.header>button.header__toggle{
+    display: none;
+  }
+  header>nav.header>ul.header__list{
+    display: block;
+    position: initial;
+    top: auto;
+    left: auto;
+    width: auto;
+    height: auto;
+    padding-top: 0;
+    background: none;
+    float: right;
+  }
+  header>nav.header>ul.header__list>.header__item{
+    float: left;
+    padding: 0 1em 0 0;
+    border: none;
+    line-height: 1.5;
+    height: 3em;
+  }
+  header>nav.header>ul.header__list>.header__item>a{
+    line-height: 3em;
+  }
+  header>nav.header>ul.header__list>.header__item__close{
+    display: none;
+  }
+}
+
+/**************************************************************
+* Footer
+**************************************************************/
+
+/**************************************************************
+* Button
+**************************************************************/
+button[type="button"].primary {
+  background-color: var(--color-accent);
+  color: var(--color-dominant-dark);
+  font-weight: 500;
+  border-radius: 2em;
+  padding: 0.5em 1em 0.5em 1em;
+}
+
+button[type="button"].primary:hover {
+  background-color: var(--color-dominant);
+  color: var(--color-white);
 }
