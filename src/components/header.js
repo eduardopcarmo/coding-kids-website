@@ -10,8 +10,25 @@ import './header.css';
 
 // Header
 class Header extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            isOpen: null
+        };
+    }
+
+    // Toggle the Menu
     toggleMenu(){
-        alert('oi')
+        let { isOpen } = this.state;
+        this.setState({
+            isOpen: !isOpen,
+        });
+    }
+
+    renderLink(to, text){
+        return(
+            <li className="header__item"><Link to={to} className="header__link" onClick={() => this.toggleMenu()}>{text}</Link></li>
+        )
     }
 
     render(){
@@ -24,13 +41,12 @@ class Header extends Component{
                     <button className="header__toggle">
                         <span className="hamburger" onClick={() => this.toggleMenu()}>≡</span>
                     </button>
-                    <ul className="header__list">
-                        <li className="header__item"><Link to="/" className="header__link">Home</Link></li>
-                        <li className="header__item"><Link to="/curriculum" className="header__link">Curriculum</Link></li>
-                        <li className="header__item"><Link to="/faq" className="header__link">FAQ</Link></li>
-                        <li className="header__item"><Link to="/blog" className="header__link">Blog</Link></li>
-                        <li className="header__item"><Link to="/contact" className="header__link">Contacts</Link></li>
-                        <li className="header__item__close"><button className="header__item__close__button" onClick={() => this.toggleMenu()}>X</button></li>                    
+                    <ul className={this.state.isOpen === null ? 'header__list' : this.state.isOpen ? 'header__list header__list__open' : 'header__list header__list__close'}>
+                        {this.renderLink("/", "Home")}
+                        {this.renderLink("/curriculum", "Curriculum")}
+                        {this.renderLink("/faq", "FAQ")}
+                        {this.renderLink("/blog", "Blog")}
+                        {this.renderLink("/contact", "Contacts")}
                     </ul>
                 </nav>
             </header>
