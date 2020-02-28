@@ -1,0 +1,21 @@
+/**************************************************************
+* Home Page
+* @author Eduardo Pereira do Carmo
+* @link https://github.com/eduardopcarmo
+**************************************************************/
+.home__hero > h1{
+    position: relative;
+}
+.home__hero > img.round-img{
+    margin-top: -2rem;
+}
+
+.home__hero > p:last-child{
+    text-align: right;
+}
+
+.home__subHero {
+    background-color: var(--color-gray);
+    margin-bottom: 2.8rem;
+}
+

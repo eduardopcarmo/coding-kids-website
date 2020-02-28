@@ -1,5 +1,9 @@
 /**************************************************************
-* @component Footer
+* Contact Form Component
 * @author Eduardo Pereira do Carmo
 * @link https://github.com/eduardopcarmo
 **************************************************************/
+section.contactForm{
+    background-color: var(--color-dominant);
+    padding: 2.8rem 1rem 2.8rem 1rem;
+}

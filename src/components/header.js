@@ -5,9 +5,6 @@ import { Link } from 'react-router-dom'
 // Logo
 import logo from '../assets/img/codingkids_logo.png'; // with import
 
-// CSS
-import './header.css';
-
 // Header
 class Header extends Component{
     constructor(props){
