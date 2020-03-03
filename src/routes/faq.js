@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 
+// Custom Components
+import FaqPage from '../components/pages/faq';
+
 class Faq extends Component{
     render(){
         return (
-            <p>
-                Faq
-            </p>
+            <section id="faq">
+                <FaqPage />
+            </section>
         );
     }
 }

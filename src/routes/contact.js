@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 
+// Custom Components
+import ContactPage from '../components/pages/contact';
+
 class Contact extends Component{
     render(){
         return (
-            <p>
-                Contact
-            </p>
+            <section id="contact">
+                <ContactPage />
+            </section>
         );
     }
 }

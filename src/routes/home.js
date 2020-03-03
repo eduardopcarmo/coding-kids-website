@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 
 // Custom Components
-import HomePage from '../components/home';
+import HomePage from '../components/pages/home';
 
 class Home extends Component{
     render(){

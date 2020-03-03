@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 
+// Custom Components
+import CurriculumPage from '../components/pages/curriculum';
+
 class Curriculum extends Component{
     render(){
         return (
-            <p>
-                Curriculum
-            </p>
+            <section id="curriculum">
+                <CurriculumPage />
+            </section>
         );
     }
 }

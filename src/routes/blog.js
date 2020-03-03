@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 
+// Custom Components
+import BlogPage from '../components/pages/blog';
+
 class Blog extends Component{
     render(){
         return (
-            <p>
-                Blog
-            </p>
+            <section id="blog">
+                <BlogPage />
+            </section>
         );
     }
 }
