@@ -204,7 +204,7 @@ footer.footer .footer__link {
 /**************************************************************
 * Button
 **************************************************************/
-button[type="button"].primary {
+button[type="button"].primary, button[type="submit"].primary {
   background-color: var(--color-accent);
   color: var(--color-dominant-dark);
   font-weight: 500;
@@ -212,7 +212,7 @@ button[type="button"].primary {
   padding: 0.5rem 1rem 0.5rem 1rem;
 }
 
-button[type="button"].primary:hover {
+button[type="button"].primary:hover, button[type="submit"].primary:hover {
   background-color: var(--color-dominant);
   color: var(--color-white);
 }
