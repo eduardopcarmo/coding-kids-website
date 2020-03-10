@@ -10,10 +10,10 @@ import ContactForm from '../common/contactForm';
 import Box from '../common/box';
 import Loading from '../common/loading';
 import ErrorFeedback from '../common/errorFeedback';
+import WagesByProvince from '../common/wagesByProvince';
 
 // JSON FILE
 import blogPosts from '../../assets/json/blog.json';
-import provinceList from '../../assets/json/province.json';
 
 // CSS
 import './blog.css';
@@ -23,11 +23,6 @@ class Blog extends Component{
         super(props);
         this.state = {
             futureSkills: {
-                errors: null,
-                isLoaded: false,
-                data: []
-            },
-            wages: {
                 errors: null,
                 isLoaded: false,
                 data: []
@@ -83,59 +78,10 @@ class Blog extends Component{
         });
     }
 
-    // Load Wages Info
-    loadWages(province){
-        // Load data
-        fetch('http://api.codingkids.wmdd.ca/wage/byProvinceAbbreviation?abbreviation=' + province, {
-            method: 'get',
-            headers: new Headers({
-                'content-type': 'application/json'
-            })
-        }).then(response => {
-            if(response.status !== 200){
-                this.setState({
-                    wages: {
-                        isLoaded: true,
-                    }
-                });
-                throw response.statusText;
-            }else{
-                return response.json();
-            }
-        })
-        .then(result => {
-            if(result != null 
-                && result.status != null 
-                && result.status.id === 200){
-                    this.setState({
-                        wages: {
-                            isLoaded: true,
-                            data: result.data,
-                        }
-                    });
-            }else {
-                this.setState({
-                    wages: {
-                        isLoaded: true,
-                        errors: result.status.errors
-                    }
-                });
-            }
-        }).catch(error => {
-            this.setState({
-                wages: {
-                    isLoaded: true,
-                    errors: [ error ]
-                }
-            });
-        });
-    }
-
 
     // Load data from API
     componentDidMount(){
         this.loadFutureSkills();
-        this.loadWages('BC');
     }
 
     renderFutureSkillsGraphic(year){
@@ -185,54 +131,6 @@ class Blog extends Component{
         )
     }
 
-    renderWageGraphic(){
-        const {isLoaded, errors, data} = this.state.wages;
-
-        // Is Loading that from API
-        if(!isLoaded){
-            return <Loading />
-        }else if(Array.isArray(errors) && errors.length > 0){
-            // Has error
-            return <ErrorFeedback errorsToShow={errors} />
-        }else if(Array.isArray(data) && data.length > 0){
-            // Show the Sessions
-            return (
-                <div className="blog__wage__content_graphic">
-                    {
-                        data.map(function(wage, index){
-                            return (
-                                <p key={index}>{wage.noc.name} => low: {wage.low} | median: {wage.median} | high: {wage.high} </p>
-                            ) 
-                        })
-                    }
-                </div>
-            )
-        }else{
-            return ("");
-        }
-    }
-
-    // render Future Skills
-    renderWages() {
-        return(
-            <section className="blog__wages default_space">
-                <h2>Map with wages by province</h2>
-                <div className="blog__wages__content">
-                    <ul>
-                        {
-                            provinceList.provinces.map(function(province, index){
-                                return (
-                                    <li key={index} onClick={() => this.loadWages(province.abbreviation)}>{province.abbreviation} - {province.name}</li>
-                                ) 
-                            }, this)
-                        }
-                    </ul>
-                    {this.renderWageGraphic()}
-                </div>
-            </section>
-        )
-    }
-
     // Render all blog posts
     renderBlogPosts(){
         return (
@@ -258,7 +156,7 @@ class Blog extends Component{
             <div className="blog">
                 <PageTitle title="Blog" />
                 {this.renderFutureSkills()}
-                {this.renderWages()}
+                <WagesByProvince />
                 {this.renderBlogPosts()}
                 <ContactForm />
             </div>
