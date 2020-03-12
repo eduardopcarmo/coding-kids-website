@@ -6,7 +6,7 @@ import PageTitle from '../common/pageTitle';
 import ContactForm from '../common/contactForm';
 
 // Image
-import contactInfoImg from '../../assets/img/home/stem-t4l-l862hX_FET8-unsplash_min.jpg';
+import contactInfoImg from '../../assets/img/home/hero.jpg';
 
 // CSS
 import './contact.css';

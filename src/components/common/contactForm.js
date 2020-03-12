@@ -9,7 +9,7 @@ import Loading from '../common/loading';
 import ErrorFeedback from '../common/errorFeedback';
 
 // Image
-import heroImage from '../../assets/img/codingkids_logo.png'; // with import
+import heroImage from '../../assets/img/contactForm/kid_using_vr.png'; // with import
 
 // CSS
 import './contactForm.css';
@@ -229,42 +229,28 @@ class ContactForm extends Component{
     render(){
         const disableSubmitBtn = this.state.disableSubmitBtn;
         return (
-            <section className="contactForm">
-                <h1>Book a trial class</h1>
-                <img src={heroImage} alt="Coding Kids" />
-                <form className="form__horizontal" onSubmit={this.handleSubmit}>
-                    <div className="form__horizontal_line">
+            <section className="content__session contactForm">
+                <div className="contactForm__box">
+                    <h1>Book a free class</h1>
+                    <form className="form__horizontal" onSubmit={this.handleSubmit}>
                         <label>Day of the class</label>
                         {this.renderDayOfTheClass()}
-                    </div>
-                    <div className="form__horizontal_line">
                         <label>E-mail</label>
                         <input type="email" name="email" onChange={this.handleInputChange} disabled={disableSubmitBtn} required/>
-                    </div>
-                    <div className="form__horizontal_line">
                         <label>Parent's / Caregiver's Name </label>
                         <input type="text" name="parentName" onChange={this.handleInputChange} disabled={disableSubmitBtn} required/>
-                    </div>
-                    <div className="form__horizontal_line">
                         <label>Parent's / Caregiver's Phone Number</label>
                         <InputMask mask="(999) 999 9999" maskChar=" " name="parentPhoneNumber" onChange={this.handleInputChange} disabled={disableSubmitBtn} required />
-                    </div>
-                    <div className="form__horizontal_line">
                         <label>Child's (Children's) Name</label>
                         <input type="text" name="childName" onChange={this.handleInputChange} disabled={disableSubmitBtn} required/>
-                    </div>
-                    <div className="form__horizontal_line">
                         <label>Child's (Children's) Age / Grade</label>
                         <input type="number" size="6" min="4" max="12" name="childAge" onChange={this.handleInputChange} disabled={disableSubmitBtn} required/>
-                    </div>
-                    <div className="form__horizontal_line">
-                        <label>Note</label>
+                        <label>Notes</label>
                         <textarea rows="4" name="note" onChange={this.handleInputChange} disabled={disableSubmitBtn} />
-                    </div>
-                    <div className="form__horizontal_line">
-                        <button type="submit" className="primary" disabled={disableSubmitBtn}>Send</button>
-                    </div>
-                </form>
+                        <button type="submit" className="btn btn-secondary" disabled={disableSubmitBtn}>Send</button>
+                    </form>
+                </div>
+                <img src={heroImage} className="border-img" alt="Book a free class" />
             </section>
         )
     }

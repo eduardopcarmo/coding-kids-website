@@ -3,10 +3,3 @@
 * @author Eduardo Pereira do Carmo
 * @link https://github.com/eduardopcarmo
 **************************************************************/
-.box {
-    margin-bottom: 2rem;
-}
-
-.box>h1 {
-    margin-bottom: 1.5rem;
-}

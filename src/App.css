@@ -7,19 +7,29 @@
 /**************************************************************
 * Variables
 **************************************************************/
-* {
-  /*Colors*/
-  --color-dominant: #7568AF;
-  --color-dominant-dark: #514A72;
-  --color-accent: #E2BE6E;
-  --color-accent-dark: #E2BE6E;
-  --color-neutral: #231f20;
-  --color-gray: #F2F2F2;
-  --color-black: #000000;
-  --color-white: #ffffff;
+:root {
+  /* Colors */
+  --clr-primary: #7568AF;
+  --clr-secondary: #E2BE6E;
 
-  /*Typography*/
-  --typo-base-size: 18px;
+  --clr-light: #F3F3F3;
+  --clr-medium: #525252;
+  --clr-dark: #140F10;
+
+  --clr-white: #ffffff;
+  --clr-black: #000000;
+  ;
+
+  /* Font Family */
+  --ff-primary: 'Ubuntu', sans-serif;
+  --ff-secondary: 'Montserrat', sans-serif;
+
+  /* Font Weight */
+  --fw-normal: 300;
+  --fw-bold: 700;
+
+  /* Font Size */
+  --fs-base-size: 14px;
 }
 
 /**************************************************************
@@ -27,218 +37,168 @@
 **************************************************************/
 html {
   /*for using REM units*/
-  font-size: var(--typo-base-size);
+  font-size: var(--fs-base-size);
 }
 
+/**************************************************************
+* Generic
+**************************************************************/
 body {
-  font-family: 'Ubuntu';
-  font-weight: 300;
-  letter-spacing: 1px;
-  line-height: 2rem;
-  color: var(--typo-base-size);
+  margin: 0;
+  background-color: var(--clr-white);
+  color: var(--clr-black);
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-normal);
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Montserrat';
-  font-weight: 900;
+.content__session {
+  padding: 1rem
 }
 
-h1 {
-  font-size: 2.0rem;
-  color: var(--color-dominant);
-}
-
-h2 {
-  font-size: 3rem;
-  letter-spacing: 2px;
+.content__session-title {
   text-transform: uppercase;
-  color: var(--color-accent);
-  line-height: 3rem;
-  margin-bottom: 1.5rem;
+  font-family: var(--ff-secondary);
+  font-weight: var(--fw-bold);
+  font-size: 2rem;
+  line-height: 1.23;
+  text-align: center;
+  letter-spacing: 0.2em;
 }
+
+.content__division {
+  background-color: var(--clr-light);
+  color: var(--clr-dark);
+
+  font-family: var(--ff-secondary);
+  font-weight: var(--fw-bold);
+  font-size: 1.5rem;
+  line-height: 1.23;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+/*
+Media Queries - Bootstrap
+https://www.w3schools.com/bootstrap/bootstrap_grid_system.asp
+Extra small: <768px	
+Small: >=768px	
+Medium: >=992px	
+Large: >=1200px
+*/
 
 /**************************************************************
-* Main Container
+* Images
 **************************************************************/
-#root {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto auto auto;
-}
-
-/**************************************************************
-* Support Classes
-**************************************************************/
-.default_space {
-  padding: 0 1rem 2.8rem 1rem;
-}
-
-.default_space:first-child {
-  padding-top: 0;
-}
-
-.round-img {
-  border-radius: 50%;
-  max-width: 20rem;
-  margin-bottom: 1.5rem;
+.border-img {
+  border-radius: 13px;
+  width: 100%;
 }
 
 /**************************************************************
 * Header
 **************************************************************/
 header {
-  background: var(--color-dominant);
-  background: linear-gradient(90deg, var(--color-dominant) 0%, var(--color-dominant-dark) 100%);
-  color: var(--color-white);
-  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--clr-light);
+
 }
 
-header>nav.header {
-  padding: 0.7rem 0.7rem 0rem 0.7rem;
-}
-
-header>nav.header>a.header__logo,
-header>nav.header>a.header__logo img,
-header>nav.header>button.header__toggle {
-  height: 3rem;
+.header__logo {
   display: inline-block;
-  line-height: 1.5rem;
 }
 
-header>nav.header>button.header__toggle {
-  float: right;
+.header__logo>img {
+  max-width: 7rem;
 }
 
-header>nav.header>button.header__toggle .hamburger {
-  font-size: 2rem;
+.nav {
+  display: none;
 }
 
-header>nav.header>ul.header__list {
-  background: var(--color-dominant);
-  background: linear-gradient(90deg, var(--color-dominant) 0%, var(--color-dominant-dark) 100%);
-  display: block;
-  position: fixed;
-  top: 4.4rem;
-  left: 100%;
-  width: 100%;
-  height: 100vh;
-  padding-top: 1rem;
-  z-index: 99999;
+.nav-open {
+  display: inherit;
 }
 
-header>nav.header>ul.header__list.header__list__open {
-  left: 0;
-  animation-duration: 1s;
-  animation-name: headerOpenMenu;
+.nav__list {
+  border-top: 1px solid var(--clr-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+  font-weight: var(--fw-bold);
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  margin: 0 1rem;
 }
 
-header>nav.header>ul.header__list.header__list__close {
-  animation-duration: 1s;
-  animation-name: headerCloseMenu;
-}
-
-header>nav.header>ul.header__list>.header__item {
-  padding: 0 3rem;
-  border-bottom: 1px solid var(--color-white);
-
-}
-
-header>nav.header>ul.header__list>.header__item:first-child {
-  border-top: 1px solid var(--color-white);
-}
-
-header>nav.header>ul.header__list>.header__item>a {
+.nav__link {
   display: inline-block;
   width: 100%;
 }
 
-header>nav.header>ul.header__list>.header__item__close {
+.header__toggle {
+  font-weight: var(--fw-bold);
+  font-size: 3rem;
   position: absolute;
-  top: 0;
-  right: 0;
-}
-
-header>nav.header>ul.header__list>.header__item__close>button.header__item__close__button {
-  width: 3rem;
-  height: 3rem;
-}
-
-@keyframes headerOpenMenu {
-  from {
-    left: 100%;
-  }
-
-  to {
-    left: 0;
-  }
-}
-
-@keyframes headerCloseMenu {
-  from {
-    left: 0;
-  }
-
-  to {
-    left: 100%;
-  }
+  top: 1rem;
+  right: 1rem;
 }
 
 /**************************************************************
 * Footer
 **************************************************************/
-footer.footer {
-  background-color: var(--color-gray);
-  padding: 2.8rem 1rem 2.8rem 1rem;
-  font-weight: 500;
+.footer_links{
+  background-color: var(--clr-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
 }
 
-footer.footer .footer__link {
-  text-decoration: underline;
+/**************************************************************
+* Header
+**************************************************************/
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.box__title {
+  color: var(--clr-dark);
+  font-family: var(--ff-secondary);
+  font-weight: var(--fw-bold);
+  font-size: 2rem;
+  line-height: 1.22;
+  margin: 1.7rem 0 1.7rem 0;
+  padding-left: 1rem;
+  background: linear-gradient(90deg, var(--clr-primary) 0.6rem, transparent 0.6rem);
+}
+
+.box__text {
+  margin: 0 0 1.7rem 0;
 }
 
 /**************************************************************
 * Button
 **************************************************************/
-button[type="button"].primary, button[type="submit"].primary {
-  background-color: var(--color-accent);
-  color: var(--color-dominant-dark);
-  font-weight: 500;
-  border-radius: 2rem;
-  padding: 0.5rem 1rem 0.5rem 1rem;
+.btn {
+  font-family: var(--ff-secondary);
+  font-weight: var(--fw-bold);
+  font-size: 1.3rem;
+  line-height: 1.5;
+  border-radius: 1.5rem;
+  padding: 0.2rem 1.5rem;
+  color: var(--clr-white);
+  text-align: center;
 }
 
-button[type="button"].primary:hover, button[type="submit"].primary:hover {
-  background-color: var(--color-dominant);
-  color: var(--color-white);
+.btn-primary {
+  background-color: var(--clr-primary);
 }
 
-/**************************************************************
-* Uppercase letter
-**************************************************************/
-.home__subHero {
-  padding: 2.8rem 1rem 2.8rem 1rem;
-}
-
-.home__subHero::first-letter {
-  background-color: var(--color-accent);
-  color: var(--color-dominant);
-  font-weight: 500;
-  margin-right: -1rem;
-  margin-left: -1rem;
-  padding: 0.5rem 1.5rem;
-  border-radius: 50%;
-  font-size: 5rem;
-}
-
-/**************************************************************
-* Error Feedback
-**************************************************************/
-.error__feedback{
-  background-color: var(--color-neutral);
-  color: var(--color-white);
+.btn-secondary{
+  background-color: var(--clr-secondary);
 }

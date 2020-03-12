@@ -9,10 +9,10 @@ import Loading from '../common/loading';
 import ErrorFeedback from '../common/errorFeedback';
 
 // Image
-import grade47Img1 from '../../assets/img/home/stem-t4l-l862hX_FET8-unsplash_min.jpg';
-import grade47Img2 from '../../assets/img/home/stem-t4l-l862hX_FET8-unsplash_min.jpg';
-import grade812Img1 from '../../assets/img/home/stem-t4l-l862hX_FET8-unsplash_min.jpg';
-import grade812Img2 from '../../assets/img/home/stem-t4l-l862hX_FET8-unsplash_min.jpg';
+import grade47Img1 from '../../assets/img/home/hero.jpg';
+import grade47Img2 from '../../assets/img/home/hero.jpg';
+import grade812Img1 from '../../assets/img/home/hero.jpg';
+import grade812Img2 from '../../assets/img/home/hero.jpg';
 
 // CSS
 import './curriculum.css';
