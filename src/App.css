@@ -28,7 +28,7 @@
   --fw-normal: 300;
   --fw-bold: 700;
 
-  /* Font Size */
+  /* Font Size - for using REM units */
   --fs-base-size: 14px;
 }
 
@@ -36,7 +36,6 @@
 * Typography
 **************************************************************/
 html {
-  /*for using REM units*/
   font-size: var(--fs-base-size);
 }
 
@@ -68,9 +67,8 @@ body {
 }
 
 .content__division {
-  background-color: var(--clr-light);
-  color: var(--clr-dark);
-
+  background-color: var(--clr-primary);
+  color: var(--clr-white);
   font-family: var(--ff-secondary);
   font-weight: var(--fw-bold);
   font-size: 1.5rem;
@@ -78,15 +76,6 @@ body {
   text-align: center;
   margin: 1rem 0;
 }
-
-/*
-Media Queries - Bootstrap
-https://www.w3schools.com/bootstrap/bootstrap_grid_system.asp
-Extra small: <768px	
-Small: >=768px	
-Medium: >=992px	
-Large: >=1200px
-*/
 
 /**************************************************************
 * Images
@@ -201,4 +190,31 @@ header {
 
 .btn-secondary{
   background-color: var(--clr-secondary);
+}
+
+/**************************************************************
+* Media-Query - Small: >=768px
+**************************************************************/
+@media only screen and (min-width: 768px) {
+  header{
+    background-color: red;
+  }
+}
+
+/**************************************************************
+* Media-Query - Medium: >=992px	
+**************************************************************/
+@media only screen and (min-width: 992px) {
+  header{
+    background-color: blue;
+  }
+}
+
+/**************************************************************
+* Media-Query - Large: >=1200px
+**************************************************************/
+@media only screen and (min-width: 1200px) {
+  header{
+    background-color: green;
+  }
 }
