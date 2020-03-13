@@ -147,7 +147,7 @@ class WagesByProvince extends Component{
         // Create the PATH using the projection
         const path = d3.geoPath().projection(projection);
 
-        // Convert the TOPOJSON file to GEOJON Object
+        // Convert the TOPOJSON file to GEOJSON Object
         const geojson = topojson.feature(topoJsonCanada, topoJsonCanada.objects.canada);
 
         // Add the values to create the map inside de SVG
@@ -169,16 +169,16 @@ class WagesByProvince extends Component{
             })
 
         // Add the Province Name
-        //svg.selectAll(".provinceName")
-        //    .data(geojson.features)
-        //    .enter().append("svg:text")
-        //    .text(function(d){return d.properties.POSTAL;})
-        //    .attr("x", function(d){
-        //        return path.centroid(d)[0] - 10;
-        //    })
-        //    .attr("y", function(d){
-        //        return path.centroid(d)[1];
-        //    });    
+        svg.selectAll(".provinceName")
+            .data(geojson.features)
+            .enter().append("svg:text")
+            .text(function(d){return d.properties.POSTAL;})
+            .attr("x", function(d){
+                return path.centroid(d)[0] - 10;
+            })
+            .attr("y", function(d){
+                return path.centroid(d)[1];
+            });    
     }
 
     // Render Component
