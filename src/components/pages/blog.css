@@ -19,79 +19,16 @@
     padding: 1rem;
 }
 
-.blog__posts>article>p,
-.blog__posts>article>aside {
+.blog__posts>article>p
+{
     margin: 1rem;
 }
 
+.blog__posts>article>aside{
+    margin: 0 1rem 1rem 1rem;
+}
+
 .blog__posts>article>aside>p {
-    margin-bottom: 1rem;
-}
-
-
-/**************************************************************
-* Top 10 skills in 2020
-**************************************************************/
-.skill__title {
-    font-family: var(--ff-secondary);
-    font-weight: var(--fw-bold);
-    font-size: 1.5rem;
-    line-height: 1.23;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 1.5rem;
-}
-
-.skill__line {
-    display: grid;
-    grid-template-columns: 4rem auto 4rem;
-    margin-bottom: 1.5rem;
-}
-
-.skill__position {
-    background-color: var(--clr-white);
-    color: var(--clr-dark);
-    font-family: var(--ff-secondary);
-    font-weight: var(--fw-bold);
-    font-size: 1.7rem;
-    line-height: 3rem;
-    text-align: center;
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    border: 6px solid var(--clr-primary);
-}
-
-.skill__position.skill__position-yellow {
-    border-color: var(--clr-secondary);
-}
-
-/*
-.skill__position.skill__position-green{
-    border: 6px solid transparent;
-    position: relative;
-}
-.skill__position.skill__position-green:before {
-    content: '';
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    z-index: -1;
-    margin: -6px; 
-    border-radius: inherit; 
-    background: linear-gradient(to right, red, orange);
-  }
-  */
-
-.skill__description>.skill__description-title {
-    text-align: center;
-    border-bottom: 0.5px solid var(--clr-light);
-    font-family: var(--ff-secondary);
-    font-weight: var(--fw-bold);
-    font-size: 1rem;
-    line-height: 2.22;
-}
-
-.skill__description>.skill__description-text {
-    display: none;
+    font-size: 0.7rem;
+    margin-bottom: 0.2rem;
 }

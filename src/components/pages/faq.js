@@ -14,9 +14,9 @@ class Faq extends Component{
                 {
                     faqQuestions.questions.map(function(question, index){
                         return (
-                            <div class="box" key={index}>
-                                <h2 class="box__title box__title-small">{question.title}</h2>
-                                <p class="box__text">{question.answer}</p>
+                            <div className="box" key={index}>
+                                <h2 className="box__title box__title-small">{question.title}</h2>
+                                <p className="box__text">{question.answer}</p>
                             </div>
                         ) 
                     })

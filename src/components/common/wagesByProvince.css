@@ -1,9 +1,49 @@
-path {
-    fill: #ccc;
-    stroke: #fff;
-    stroke-width: .5px;
+.blog__posts-wages-graphic path {
+    fill: var(--clr-white);
+    stroke: var(--clr-black);
+    stroke-width: 0.3px;
 }
 
-path:hover {
-    fill: red;
+.blog__posts-wages-graphic path:hover, .blog__posts-wages-graphic path:active, .blog__posts-wages-graphic path.path-active {
+    fill:var(--clr-secondary); 
+}
+
+.blog__posts-wages-graphic{
+    background-color: var(--clr-primary);
+    border-top-left-radius: var(--br-default);
+    border-top-right-radius: var(--br-default);
+}
+
+.wages__table{
+    background-color: var(--clr-secondary);
+    border-bottom-left-radius: var(--br-default);
+    border-bottom-right-radius: var(--br-default);
+    padding: 1rem;
+}
+.wages__title {
+
+    font-family: var(--ff-secondary);
+    font-weight: var(--fw-bold);
+    font-size: 1.5rem;
+    line-height: 1.23;
+    margin-bottom: 1rem;
+}
+
+.wages__line{
+    font-family: var(--ff-secondary);
+}
+
+.wages__line>.wages__line-values{
+    text-align: right;
+    margin-bottom: 1rem;
+
+}
+.wages__line>.wages__line-values > li{
+    display: inline-block;
+    margin-left: 1rem;
+    
+}
+
+.wages__line>.wages__line-values > li > span{
+    font-weight: var(--fw-bold);
 }

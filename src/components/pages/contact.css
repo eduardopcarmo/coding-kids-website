@@ -3,3 +3,23 @@
 * @author Eduardo Pereira do Carmo
 * @link https://github.com/eduardopcarmo
 **************************************************************/
+
+.content__address-info,
+.content__location-info{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.content__address-info,
+.content__address-info>p,
+.content__location-info,
+.content__location-info>p,
+.content__location-info>a {
+    margin-top: 1rem;
+}
+
+.content__address-info>p>strong, .content__location-info>p>strong {
+    font-weight: var(--fw-bold);
+}
+

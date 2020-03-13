@@ -86,17 +86,21 @@ class WagesByProvince extends Component{
             // Has error
             return <ErrorFeedback errorsToShow={errors} />
         }else if(Array.isArray(data) && data.length > 0){
-
-            console.log(data[0].province.name)
             // Show the Sessions
             return (
-                <div className="blog__wage__content_graphic">
-                    <h3>{data[0].province.name}</h3>
+                <div className="wages__table">
+                    <h3 className="wages__title">{data[0].province.name}</h3>
                     {
                         data.map(function(wage, index){
-                            console.log(wage);
                             return (
-                                <p key={index}>{wage.noc.name} => low: {wage.low} | median: {wage.median} | high: {wage.high} </p>
+                                <div className="wages__line" key={index}>
+                                    <p className="wages__line-title">{wage.noc.name}</p>
+                                    <ul className="wages__line-values">
+                                        <li><span>$</span> {wage.low != null ? wage.low.toFixed(2) : "not inf."}</li>
+                                        <li><span>$$</span> {wage.median != null ? wage.median.toFixed(2) : "not inf."}</li>
+                                        <li><span>$$$</span> {wage.high != null ? wage.high.toFixed(2) : "not inf."}</li>
+                                    </ul>
+                                </div>
                             ) 
                         })
                     }
@@ -107,11 +111,23 @@ class WagesByProvince extends Component{
         }
     }
 
+    markProvinceAsAcrive(id){
+        let element = document.getElementById(id);
+
+        // Remove all classes
+        element.parentNode.childNodes.forEach(e => {
+            e.classList.remove('path-active');
+        });
+
+        // Add Active Class
+        element.classList.add('path-active');
+    }
+
     // Create a MAP using D3js
     renderMap(){
         // Setting the inicial values
         const width = this.mapRef.current.offsetWidth; // Get the Width using the Reference
-        const height = width; // width / 2;
+        const height = width *0.75; // width / 2;
         const mapRatio = 1;
         const mapRatioAdjuster = .15;
 
@@ -138,41 +154,38 @@ class WagesByProvince extends Component{
             .data(geojson.features)
             .enter()
             .append("path")
-            //.attr("id", function(d,i) { return "province_"+i; }) //Unique id for each Province
             .attr("d", path)
-            .on('click', datum => {
+            .attr("id", datum => {
+                return "path_" + datum.properties.POSTAL;
+            })
+            .on('click', (datum) => {
                 if(datum.properties.POSTAL){
-                    this.loadWages(datum.properties.POSTAL)
-                    console.log(datum.properties.POSTAL); // the datum for the clicked circle
+                    this.loadWages(datum.properties.POSTAL);
+                    this.markProvinceAsAcrive("path_" + datum.properties.POSTAL);
                 }
-            }).style("fill", datum =>{
-                //return datum.properties.POSTAL === "BC" ? "yellow" : null;
+            }).attr("class", (datum) =>{
+                return datum.properties.POSTAL === "BC" ? "path-active" : "";
             })
 
         // Add the Province Name
-        svg.selectAll(".provinceName")
-            .data(geojson.features)
-            .enter().append("svg:text")
-            .text(function(d){return d.properties.POSTAL;})
-            .attr("x", function(d){
-                return path.centroid(d)[0] - 10;
-            })
-            .attr("y", function(d){
-                return path.centroid(d)[1];
-            });    
+        //svg.selectAll(".provinceName")
+        //    .data(geojson.features)
+        //    .enter().append("svg:text")
+        //    .text(function(d){return d.properties.POSTAL;})
+        //    .attr("x", function(d){
+        //        return path.centroid(d)[0] - 10;
+        //    })
+        //    .attr("y", function(d){
+        //        return path.centroid(d)[1];
+        //    });    
     }
 
     // Render Component
     render(){
         return (
-            <div className="wagesByProvince default_space">
-                <section className="blog__wages default_space">
-                    <h2>Map with wages by province</h2>
-                    <div ref={this.mapRef}></div>
-                    <div className="blog__wages__content">
-                        {this.renderWageGraphic()}
-                    </div>
-                </section>
+            <div className="content__session blog__posts-wages">
+                <div ref={this.mapRef} className="blog__posts-wages-graphic"></div>
+                {this.renderWageGraphic()}
             </div>
         )
     }
