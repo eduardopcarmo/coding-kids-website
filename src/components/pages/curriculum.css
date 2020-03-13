@@ -3,3 +3,43 @@
 * @author Eduardo Pereira do Carmo
 * @link https://github.com/eduardopcarmo
 **************************************************************/
+.content__schedule-box{
+    background-color: var(--clr-light);
+    border-radius: var(--br-default);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    font-family: var(--ff-secondary);
+    line-height: 1.22;    
+}
+
+.content__instructors-box__content{
+    margin-bottom: 1rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    font-family: var(--ff-secondary);
+    line-height: 1.22;    
+}
+
+.content__schedule-box>h2, .content__instructors-box__content>h2{
+    font-weight: var(--fw-bold);
+    font-size: 1.5rem;
+}
+
+.content__schedule-box>p, .content__instructors-box__content>p{
+    font-size: 1.2rem;
+    margin: 1rem 0 1.5rem 0;
+}
+
+.content__schedule-box:last-child, .content__instructors-box__content:last-child{
+    margin-bottom: 0;
+}
+
+.content__instructors-box > .border-img-round{
+    width: 80%;
+    margin: 0 auto;
+    display: inherit;
+}

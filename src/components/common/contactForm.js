@@ -9,7 +9,7 @@ import Loading from '../common/loading';
 import ErrorFeedback from '../common/errorFeedback';
 
 // Image
-import heroImage from '../../assets/img/contactForm/kid_using_vr.png'; // with import
+import heroImage from '../../assets/img/contactForm/kid_using_vr.jpg'; // with import
 
 // CSS
 import './contactForm.css';
@@ -247,7 +247,7 @@ class ContactForm extends Component{
                         <input type="number" size="6" min="4" max="12" name="childAge" onChange={this.handleInputChange} disabled={disableSubmitBtn} required/>
                         <label>Notes</label>
                         <textarea rows="4" name="note" onChange={this.handleInputChange} disabled={disableSubmitBtn} />
-                        <button type="submit" className="btn btn-secondary" disabled={disableSubmitBtn}>Send</button>
+                        <button type="submit" className="btn btn-secondary" disabled={disableSubmitBtn}>Book</button>
                     </form>
                 </div>
                 <img src={heroImage} className="border-img" alt="Book a free class" />

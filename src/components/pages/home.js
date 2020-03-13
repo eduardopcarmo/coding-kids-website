@@ -28,7 +28,7 @@ class Home extends Component{
                             <h1 className="box__title">Incredible coding learning with exclusive VR experience</h1>
                             <p className="box__text">Two hours of coding and creative activities for kids in grade 1 and up. Exclusive learning experience with Virtual Reality technology developed in Vancouver, BC.</p>
                             <Button 
-                                classList="btn btn-primary"
+                                classList="btn btn-secondary"
                                 action={(e) => this.scrollToContact()}
                                 dataKey={Date.now}
                                 text="Book a trial session"/>

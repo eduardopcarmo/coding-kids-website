@@ -10,21 +10,23 @@ class Header extends Component{
     constructor(props){
         super(props);
         this.state = {
-            isOpen: null
+            isOpen: null,
+            active: 1
         };
     }
 
     // Toggle the Menu
-    toggleMenu(){
+    toggleMenu(id){
         let { isOpen } = this.state;
         this.setState({
             isOpen: !isOpen,
+            active: id
         });
     }
 
-    renderLink(to, text){
+    renderLink(to, text, id){
         return(
-            <li className="nav__list-item"><Link to={to} className="nav__link" onClick={() => this.toggleMenu()}>{text}</Link></li>
+            <li className="nav__list-item"><Link to={to} className={this.state.active === id ? "nav__link nav__link-active" : "nav__link" } onClick={() => this.toggleMenu(id)}>{text}</Link></li>
         )
     }
 
@@ -37,14 +39,14 @@ class Header extends Component{
                     </Link>
                     <nav className={this.state.isOpen ? "nav nav-open" : "nav"}>
                         <ul className="nav__list">
-                            {this.renderLink("/", "Home")}
-                            {this.renderLink("/curriculum", "Curriculum")}
-                            {this.renderLink("/faq", "FAQ")}
-                            {this.renderLink("/blog", "Blog")}
-                            {this.renderLink("/contact", "Contacts")}
+                            {this.renderLink("/", "Home", 1)}
+                            {this.renderLink("/curriculum", "Curriculum", 2)}
+                            {this.renderLink("/faq", "FAQ", 3)}
+                            {this.renderLink("/blog", "Blog", 4)}
+                            {this.renderLink("/contact", "Contacts", 5)}
                         </ul>
                     </nav>
-                    <button className="header__toggle" onClick={() => this.toggleMenu()}>≡</button>
+                    <button className="header__toggle" onClick={() => this.toggleMenu(this.state.active)}>≡</button>
                 </div>
             </header>
         );

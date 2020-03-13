@@ -2,17 +2,13 @@
 import React, { Component } from 'react';
 
 // Custom Components
-import PageTitle from '../common/pageTitle';
-import ContactForm from '../common/contactForm';
-import Box from '../common/box';
+import Button from '../common/button';
 import Loading from '../common/loading';
 import ErrorFeedback from '../common/errorFeedback';
 
 // Image
-import grade47Img1 from '../../assets/img/home/hero.jpg';
-import grade47Img2 from '../../assets/img/home/hero.jpg';
-import grade812Img1 from '../../assets/img/home/hero.jpg';
-import grade812Img2 from '../../assets/img/home/hero.jpg';
+import curriculumImage from '../../assets/img/curriculum/curriculum.jpg';
+
 
 // CSS
 import './curriculum.css';
@@ -32,6 +28,11 @@ class Curriculum extends Component{
                 items: []
             }
         };
+    }
+
+    // Scroll to show Contact Form
+    scrollToContact(){
+        window.scrollTo(0, document.getElementsByTagName("footer")[0].offsetTop);
     }
 
     // Load Sessions Info
@@ -149,15 +150,22 @@ class Curriculum extends Component{
         }else if(Array.isArray(items) && items.length > 0){
             // Show the Sessions
             return (
-                <div className="section_2_columns">
+                <div className="content__session-col content__schedule">
                     {
                         items.map(function(session, index){
+                            let sessionName = session.name.split(', ');
                             return (
-                                <div className="curriculum__schedule_session" key={index}>
-                                    {session.name}
+                                <div className="content__schedule-box" key={index}>
+                                    <h2>{sessionName[0]}</h2>
+                                    <p>{sessionName[1]}</p>
+                                    <Button 
+                                        classList="btn btn-secondary"
+                                        action={(e) => this.scrollToContact()}
+                                        dataKey={Date.now}
+                                        text="Book a trial session"/>
                                 </div>
                             ) 
-                        })
+                        }, this)
                     }
                 </div>
             )
@@ -179,20 +187,19 @@ class Curriculum extends Component{
         }else if(Array.isArray(items) && items.length > 0){
             // Show the Sessions
             return (
-                <div className="section_2_columns">
+                <div className="content__session-col content__instructors">
                     {
                         items.map(function(instructor, index){
                             return (
-                                <div className="curriculum__instructors_names" key={index}>
-                                    <Box 
-                                        img={instructor.photoUrl} 
-                                        imgAlt={instructor.firstName + " " + instructor.lastName}
-                                        title={instructor.firstName + " " + instructor.lastName}
-                                        text={instructor.bio} 
-                                        />
+                                <div className="content__instructors-box" key={index}>
+                                    <img src={instructor.photoUrl} className="border-img-round" alt={instructor.firstName} />
+                                    <div className="content__instructors-box__content">
+                                        <h2>{instructor.firstName}</h2>
+                                        <p>{instructor.bio}</p>
+                                    </div>
                                 </div>
                             ) 
-                        })
+                        }, this)
                     }
                 </div>
             )
@@ -204,50 +211,32 @@ class Curriculum extends Component{
     render(){
         return (
             <div className="curriculum">
-                <PageTitle title="Curriculum" />
-                <section className="curriculum__grades default_space">
-                    <h2>Grade 4-7</h2>
-                    <div className="section_2_columns">
-                        <Box 
-                            title="Header" 
-                            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod arcu dictum nisl tincidunt euismod. Integer in urna urna. Proin egestas feugiat aliquam."
-                            img={grade47Img1}
-                            imgAlt="Header"
-                            />
-                        <Box 
-                            title="Header" 
-                            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod arcu dictum nisl tincidunt euismod. Integer in urna urna. Proin egestas feugiat aliquam."
-                            img={grade47Img2}
-                            imgAlt="Header"
-                            />
-                    </div>
-                    <h2>Grade 8-12</h2>
-                    <div className="section_2_columns">
-                        <Box 
-                            title="Header" 
-                            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod arcu dictum nisl tincidunt euismod. Integer in urna urna. Proin egestas feugiat aliquam."
-                            img={grade812Img1}
-                            imgAlt="Header"
-                            />
-                        <Box 
-                            title="Header" 
-                            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod arcu dictum nisl tincidunt euismod. Integer in urna urna. Proin egestas feugiat aliquam."
-                            img={grade812Img2}
-                            imgAlt="Header"
-                            />
+                <section className="content__session curriculum__grades">
+                    <h1 className="content__session-title content__session-title-big">Curriculum</h1>
+                    <div className="content__session-col content__grades">
+                        <img src={curriculumImage} className="border-img" alt="Curriculum" />
+                        <div className="box">
+                            <h2 className="box__title box__title-small">Virtual Reality (VR)</h2>
+                            <p className="box__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                        <div className="box">
+                            <h2 className="box__title box__title-small">Gamification</h2>
+                            <p className="box__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                        <div className="box">
+                            <h2 className="box__title box__title-small">Computer Skills</h2>
+                            <p className="box__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
                     </div>
                 </section>
-                <section className="curriculum__schedule default_space">
-                    <h2>Schedule</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vehicula justo a dui ultricies, sit amet molestie neque finibus. Aenean sed nulla tempus, elementum purus a, ultrices leo.</p>
+                <section className="content__session curriculum__schedule">
+                    <h1 className="content__session-title content__session-title-big">Schedule</h1>
                     {this.renderSchedule()}
                 </section>
-                <section className="curriculum__instructors default_space">
-                    <h2>Instructors</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vehicula justo a dui ultricies, sit amet molestie neque finibus. Aenean sed nulla tempus, elementum purus a, ultrices leo.</p>
+                <section className="content__session curriculum__instructors">
+                    <h1 className="content__session-title content__session-title-big">Instructors</h1>
                     {this.renderInstructors()}
                 </section>
-                <ContactForm />
             </div>
         );
     }
