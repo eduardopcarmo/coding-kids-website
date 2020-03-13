@@ -3,6 +3,9 @@
 * @author Eduardo Pereira do Carmo
 * @link https://github.com/eduardopcarmo
 **************************************************************/
+.blog__posts-skills{
+    max-width: 700px;
+}
 .skill__title {
     font-family: var(--ff-secondary);
     font-weight: var(--fw-bold);
@@ -63,4 +66,18 @@
 
 .skill__description>.skill__description-text {
     display: none;
+}
+
+/**************************************************************
+* Media-Query - Small: >=768px
+**************************************************************/
+@media only screen and (min-width: 768px) {
+    .skill__description>.skill__description-text {
+        display: block;
+        padding: 0 1rem 0 1rem;
+        font-size: 0.8rem;
+    }
+    .skill__description > .skill__description-title{
+        line-height: 1.50;
+    }
 }

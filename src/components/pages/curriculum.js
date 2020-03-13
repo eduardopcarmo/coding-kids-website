@@ -213,19 +213,21 @@ class Curriculum extends Component{
             <div className="curriculum">
                 <section className="content__session curriculum__grades">
                     <h1 className="content__session-title content__session-title-big">Curriculum</h1>
-                    <div className="content__grades">
+                    <div className="content__session-col content__grades">
                         <img src={curriculumImage} className="border-img" alt="Curriculum" />
-                        <div className="box">
-                            <h2 className="box__title box__title-small">Virtual Reality (VR)</h2>
-                            <p className="box__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-                        <div className="box">
-                            <h2 className="box__title box__title-small">Gamification</h2>
-                            <p className="box__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-                        <div className="box">
-                            <h2 className="box__title box__title-small">Computer Skills</h2>
-                            <p className="box__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <div className="content__grades-box">
+                            <div className="box">
+                                <h2 className="box__title box__title-small">Virtual Reality (VR)</h2>
+                                <p className="box__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            </div>
+                            <div className="box">
+                                <h2 className="box__title box__title-small">Gamification</h2>
+                                <p className="box__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            </div>
+                            <div className="box">
+                                <h2 className="box__title box__title-small">Computer Skills</h2>
+                                <p className="box__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            </div>
                         </div>
                     </div>
                 </section>

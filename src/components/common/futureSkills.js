@@ -104,8 +104,8 @@ class FutureSkills extends Component{
         return(
             <div className="content__session blog__posts-skills">
                 <h3 className="skill__title">
-                    <span>2020</span>
-                    <span>2015</span>
+                    <span><span className="hidden-mobile">Position in </span>2020</span>
+                    <span><span className="hidden-mobile">Position in </span>2015</span>
                 </h3>
                 {this.renderFutureSkillsGraphic(2020)}
             </div>

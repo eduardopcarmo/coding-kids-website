@@ -127,7 +127,8 @@ class WagesByProvince extends Component{
     renderMap(){
         // Setting the inicial values
         const width = this.mapRef.current.offsetWidth; // Get the Width using the Reference
-        const height = width *0.75; // width / 2;
+        const heightAdjuster = window.innerWidth >= 768 ? 1 : 0.75;
+        const height = width * heightAdjuster; 
         const mapRatio = 1;
         const mapRatioAdjuster = .15;
 
@@ -184,8 +185,10 @@ class WagesByProvince extends Component{
     render(){
         return (
             <div className="content__session blog__posts-wages">
-                <div ref={this.mapRef} className="blog__posts-wages-graphic"></div>
-                {this.renderWageGraphic()}
+                <div className="content__session-col">
+                    <div ref={this.mapRef} className="blog__posts-wages-graphic"></div>
+                    {this.renderWageGraphic()}
+                </div>
             </div>
         )
     }

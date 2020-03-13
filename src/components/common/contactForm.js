@@ -229,28 +229,32 @@ class ContactForm extends Component{
     render(){
         const disableSubmitBtn = this.state.disableSubmitBtn;
         return (
-            <section className="content__session contactForm">
-                <div className="contactForm__box">
-                    <h1>Book a free class</h1>
-                    <form className="form__horizontal" onSubmit={this.handleSubmit}>
-                        <label>Day of the class</label>
-                        {this.renderDayOfTheClass()}
-                        <label>E-mail</label>
-                        <input type="email" name="email" onChange={this.handleInputChange} disabled={disableSubmitBtn} required/>
-                        <label>Parent's / Caregiver's Name </label>
-                        <input type="text" name="parentName" onChange={this.handleInputChange} disabled={disableSubmitBtn} required/>
-                        <label>Parent's / Caregiver's Phone Number</label>
-                        <InputMask mask="(999) 999 9999" maskChar=" " name="parentPhoneNumber" onChange={this.handleInputChange} disabled={disableSubmitBtn} required />
-                        <label>Child's (Children's) Name</label>
-                        <input type="text" name="childName" onChange={this.handleInputChange} disabled={disableSubmitBtn} required/>
-                        <label>Child's (Children's) Age / Grade</label>
-                        <input type="number" size="6" min="4" max="12" name="childAge" onChange={this.handleInputChange} disabled={disableSubmitBtn} required/>
-                        <label>Notes</label>
-                        <textarea rows="4" name="note" onChange={this.handleInputChange} disabled={disableSubmitBtn} />
-                        <button type="submit" className="btn btn-secondary" disabled={disableSubmitBtn}>Book</button>
-                    </form>
+            <section className="contactForm">
+                <div className="content__session">
+                    <div className="content__session-col">
+                        <img src={heroImage} className="border-img" alt="Book a free class" />
+                        <div className="contactForm__box">
+                            <h1>Book a free class</h1>
+                            <form className="form__horizontal" onSubmit={this.handleSubmit}>
+                                <label>Day of the class</label>
+                                {this.renderDayOfTheClass()}
+                                <label>E-mail</label>
+                                <input type="email" name="email" onChange={this.handleInputChange} disabled={disableSubmitBtn} required/>
+                                <label>Parent's / Caregiver's Name </label>
+                                <input type="text" name="parentName" onChange={this.handleInputChange} disabled={disableSubmitBtn} required/>
+                                <label>Parent's / Caregiver's Phone Number</label>
+                                <InputMask mask="(999) 999 9999" maskChar=" " name="parentPhoneNumber" onChange={this.handleInputChange} disabled={disableSubmitBtn} required />
+                                <label>Child's (Children's) Name</label>
+                                <input type="text" name="childName" onChange={this.handleInputChange} disabled={disableSubmitBtn} required/>
+                                <label>Child's (Children's) Age / Grade</label>
+                                <input type="number" size="6" min="4" max="12" name="childAge" onChange={this.handleInputChange} disabled={disableSubmitBtn} required/>
+                                <label>Notes</label>
+                                <textarea rows="4" name="note" onChange={this.handleInputChange} disabled={disableSubmitBtn} />
+                                <button type="submit" className="btn btn-secondary" disabled={disableSubmitBtn}>Book</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <img src={heroImage} className="border-img" alt="Book a free class" />
             </section>
         )
     }

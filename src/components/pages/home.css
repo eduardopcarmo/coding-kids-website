@@ -3,13 +3,14 @@
 * @author Eduardo Pereira do Carmo
 * @link https://github.com/eduardopcarmo
 **************************************************************/
-.content__session.home__whyLearnCoding{
+.content__session.home__whyLearnCoding {
     padding-bottom: 0;
 }
+
 .content__session.home__wowWeTeach {
     padding-top: 0;
 }
-.content__session.home__wowWeTeach > .content__session-title{
+
+.content__session.home__wowWeTeach>.content__session-title {
     margin: 1.7rem 0 1.7rem 0;
 }
-

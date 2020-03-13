@@ -3,11 +3,12 @@
 * @author Eduardo Pereira do Carmo
 * @link https://github.com/eduardopcarmo
 **************************************************************/
-section.contactForm{
+section.contactForm {
     background-color: var(--clr-primary);
     margin-top: 2rem;
 }
-.contactForm__box>h1{
+
+.contactForm__box>h1 {
     text-transform: uppercase;
     color: var(--clr-white);
     font-family: var(--ff-secondary);
@@ -18,29 +19,33 @@ section.contactForm{
     letter-spacing: 0.2em;
 }
 
-.contactForm>img{
+.contactForm .content__session-col>img {
     display: none;
 }
 
-.form__horizontal{
+.form__horizontal {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
 
-.form__horizontal > label, .form__horizontal > .btn{
+.form__horizontal>label,
+.form__horizontal>.btn {
     margin-top: 1rem;
 }
 
-.form__horizontal > label{
+.form__horizontal>label {
     color: var(--clr-white);
     font-weight: var(--fw-bold);
 }
-.form__horizontal > label::after{
+
+.form__horizontal>label::after {
     content: ' :';
 }
 
-.form__horizontal > select, .form__horizontal > input, .form__horizontal > textarea{
+.form__horizontal>select,
+.form__horizontal>input,
+.form__horizontal>textarea {
     font-family: var(--ff-primary);
     font-weight: var(--fw-normal);
     border-radius: 1.5rem;
@@ -48,24 +53,32 @@ section.contactForm{
     border: none;
 }
 
-.form__horizontal > select {
+.form__horizontal>select {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-appearance: none;
     -moz-appearance: none;
     background-image:
-      linear-gradient(45deg, transparent 50%, var(--clr-white) 50%),
-      linear-gradient(135deg, var(--clr-white) 50%, transparent 50%),
-      linear-gradient(to right, var(--clr-secondary), var(--clr-secondary));
+        linear-gradient(45deg, transparent 50%, var(--clr-white) 50%),
+        linear-gradient(135deg, var(--clr-white) 50%, transparent 50%),
+        linear-gradient(to right, var(--clr-secondary), var(--clr-secondary));
     background-position:
-      calc(100% - 20px) calc(1em + 2px),
-      calc(100% - 15px) calc(1em + 2px),
-      100% 0;
+        calc(100% - 20px) calc(1em + 2px),
+        calc(100% - 15px) calc(1em + 2px),
+        100% 0;
     background-size:
-      5px 5px,
-      5px 5px,
-      2.5em 2.5em;
+        5px 5px,
+        5px 5px,
+        2.5em 2.5em;
     background-repeat: no-repeat;
-  }
-  
+}
+
+/**************************************************************
+* Media-Query - Small: >=768px
+**************************************************************/
+@media only screen and (min-width: 768px) {
+    .contactForm .content__session-col>img {
+        display: block;
+    }
+}

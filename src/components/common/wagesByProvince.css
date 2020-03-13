@@ -47,3 +47,26 @@
 .wages__line>.wages__line-values > li > span{
     font-weight: var(--fw-bold);
 }
+
+/**************************************************************
+* Media-Query - Small: >=768px
+**************************************************************/
+@media only screen and (min-width: 768px) {
+    .content__session.blog__posts-wages > .content__session-col{
+        column-gap: 0px;
+    }
+
+    .blog__posts-wages-graphic{
+        border-top-left-radius: var(--br-default);
+        border-bottom-left-radius: var(--br-default);
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .wages__table{
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: var(--br-default);
+        border-bottom-right-radius: var(--br-default);
+    }
+}
+
