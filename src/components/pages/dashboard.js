@@ -10,6 +10,9 @@ import Loading from '../common/loading';
 import ErrorFeedback from '../common/errorFeedback';
 import Button from '../common/button';
 
+//CSS
+import './dashboard.css'
+
 class Dashboard extends Component{
     _isMounted = false;
 
@@ -91,14 +94,6 @@ class Dashboard extends Component{
         }
     }
 
-    // Check if the user is Logged in
-    renderIsLoggedIn(){
-        const { isLoggedIn } = this.state;
-        if(!isLoggedIn){
-            return <Redirect to='/logout' />
-        }
-    }
-
     // Errors
     renderShowError(){
         const { errors } = this.state;
@@ -171,62 +166,58 @@ class Dashboard extends Component{
         const { items } = this.state;
         if(Array.isArray(items) && items.length > 0){
             return (
-                <div className="dashboard__table">
-                    <table >
-                        <thead>
-                            <tr>
-                                <td>Email address</td>
-                                <td>Day of the class</td>
-                                <td>Parent's / Caregiver's Name</td>
-                                <td>Parent's / Caregiver's Phone Number</td>
-                                <td>Child's (Children's) Name</td>
-                                <td>Child's (Children's) Age / Grade</td>
-                                <td>Notes (allergies, etc.)</td>
-                                <td>&nbsp;</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                items.map(function(item, index){
-                                    return (
-                                        <tr key={item.id}>
-                                            <td>{item.email}</td>
-                                            <td>{item.courseClass.name}</td>
-                                            <td>{item.parentName}</td>
-                                            <td>{item.parentPhone}</td>
-                                            <td>{item.childName}</td>
-                                            <td>{item.childAge}</td>
-                                            <td>{item.note}</td>
-                                            <td>
-                                                <Button 
-                                                    classList="primary" 
-                                                    action={(e) => this.setAsDone(e, item.id)}
-                                                    dataKey={item.id}
-                                                    text="Mark as Done" />
-                                            </td>
-                                        </tr>
-                                    ) 
-                                }, this)
-                            }
-                        </tbody>
-                    </table>
+                <div className="dashboard__list">
+                    {
+                        items.map(function(item, index){
+                            return (
+                                <div className="box dashboard__item" key={item.id}>
+                                    <h2 className="box__title box__title-small">{item.email}</h2>
+                                    <label>Day of the class</label>
+                                    <p>{item.courseClass.name}</p>
+                                    <label>Parent's / Caregiver's Name</label>
+                                    <p>{item.parentName}</p>
+                                    <label>Parent's / Caregiver's Phone Number</label>
+                                    <p>{item.parentPhone}</p>
+                                    <label>Child's (Children's) Name</label>
+                                    <p>{item.childName}</p>
+                                    <label>Child's (Children's) Age / Grade</label>
+                                    <p>{item.childAge}</p>
+                                    <label>Notes (allergies, etc.)</label>
+                                    <p>{item.note}</p>
+                                    <Button 
+                                        classList="btn btn-primary" 
+                                        action={(e) => this.setAsDone(e, item.id)}
+                                        dataKey={item.id}
+                                        text="Mark as Done" />
+                                </div>
+                            ) 
+                        }, this)
+                    }
                 </div>
             )
         }
     }
 
-    
     // Render the content
     render(){
-        return (
-            <div className="dashboard">
-                <h1>Dashboard</h1>
-                {this.renderIsLoggedIn()}
-                {this.renderLoading()}
-                {this.renderShowError()}
-                {this.renderData()}
-            </div>
-        );
+        const { isLoggedIn } = this.state;
+        if(!isLoggedIn){
+            return <Redirect to='/logout' />
+        }else{
+            return (
+            
+                <div className="dashboard">
+                    <section className="content__session login__form">
+                            <h1 className="content__session-title content__session-title-big">Dashboard</h1>
+                            <div className="content__login">
+                                {this.renderData()}
+                                {this.renderShowError()}
+                                {this.renderLoading()}
+                            </div>
+                        </section>
+                </div>
+            );
+        }
     }
 }
 

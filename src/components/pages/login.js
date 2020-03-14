@@ -2,6 +2,10 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 
+// Custom Components
+import Loading from '../common/loading';
+import ErrorFeedback from '../common/errorFeedback';
+
 // Authorization
 import { authentication } from '../../core/authorization';
 
@@ -14,8 +18,9 @@ class Login extends Component{
         this.state = {
             user: '',
             pass: '',
-            feedback: '',
-            auth: false
+            auth: false,
+            errors: null,
+            isLoaded: true,
         };
 
         this.handleChangeUser = this.handleChangeUser.bind(this);
@@ -34,9 +39,9 @@ class Login extends Component{
     handleSubmit(event){
         event.preventDefault();
 
-        // [TODO] ADD LOADING
+        // Se as is Loading
         this.setState({
-            feedback: ["Executing authentication..."]
+            isLoaded: false
         });
 
         // Execut the authentication
@@ -47,68 +52,84 @@ class Login extends Component{
                 && result.status != null
                 && result.status.id === 200){
                     this.setState({
-                        feedback: ['User authorized'],
+                        isLoaded: true,
                         auth: true
                     });
             }else if(result != null 
                     && result.status != null){
                     this.setState({
-                        feedback: result.status.errors,
+                        isLoaded: true,
+                        errors: result.status.errors,
                         auth: false
                     });
             }else{
                 this.setState({
-                    feedback: ['The username/password specified is not valid'],
+                    isLoaded: true,
+                    errors: ['The username/password specified is not valid'],
                     auth: false
                 });
             }
         })
         .catch((error) => {
             this.setState({
-                feedback: ['An error occurred, please try again later'],
+                isLoaded: true,
+                errors: ['An error occurred, please try again later'],
                 auth: false
             });
         });
     }
 
-    renderRedirect(){
-        if (this.state.auth) {
-            return <Redirect to='/dashboard' />
+    // Render "Error Feedback"
+    renderErrorFeedback(){
+        const {errors} = this.state;
+        if(Array.isArray(errors) && errors.length > 0){
+            // Has error
+            return <ErrorFeedback errorsToShow={errors} />
         }
-      }
-
-    renderFeedback(){
-        return (
-            <div>
-                <ul>
-                    {       
-                        this.state.feedback.map(function(name, index){
-                            return <li key={ index }>{name}</li>;
-                        })
-                    }
-                </ul>
-            </div>
-        )
+        else{
+            return null;
+        }
     }
 
+    // Render "Loading"
+    renderLoading(){
+        const {isLoaded} = this.state;
+        if(!isLoaded){
+            return <Loading />
+        }else{
+            return null;
+        }
+    }
+
+    // Render the Login Form
     render(){
-        return (
-            <div className="login">
-                <h1>Login</h1>
-                {this.renderRedirect()}
-                <form onSubmit={this.handleSubmit}>
-                    <label>
-                        User:
-                        <input type="email" value={this.state.user} onChange={this.handleChangeUser} />
-                    </label>
-                    <label>
-                        Pass:
-                        <input type="password" value={this.state.pass}  onChange={this.handleChangePass} />
-                    </label>
-                    <input type="submit" value="Submit" />
-                </form>
-            </div>
-        );
+        const {isLoaded, auth} = this.state;
+
+        // User is authorize
+        if(auth){
+            // User is authorize
+            return <Redirect to='/dashboard' />
+        }else{
+            return (
+                <div className="login">
+                    <section className="content__session login__form">
+                        <h1 className="content__session-title content__session-title-big">Login</h1>
+                        <div className="content__session-col content__login">
+                            <form className="form__horizontal form__horizontal-inverse" onSubmit={this.handleSubmit}>
+                                {this.renderErrorFeedback()}
+                                <label>User</label>
+                                <input type="email" value={this.state.user} onChange={this.handleChangeUser} disabled={!isLoaded} required/>
+                                <label>Password</label>
+                                <input type="password" value={this.state.pass}  onChange={this.handleChangePass} disabled={!isLoaded} required/>
+                                {this.renderLoading()}
+                                <button type="submit" className="btn btn-primary" disabled={!isLoaded}>Log in</button>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            );
+        }
+
     }
 }
 

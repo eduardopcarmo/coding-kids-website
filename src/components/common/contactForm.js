@@ -248,7 +248,7 @@ class ContactForm extends Component{
                                 <input type="text" name="childName" onChange={this.handleInputChange} disabled={disableSubmitBtn} required/>
                                 <label>Child's (Children's) Age / Grade</label>
                                 <input type="number" size="6" min="4" max="12" name="childAge" onChange={this.handleInputChange} disabled={disableSubmitBtn} required/>
-                                <label>Notes</label>
+                                <label>Notes (allergies, etc.)</label>
                                 <textarea rows="4" name="note" onChange={this.handleInputChange} disabled={disableSubmitBtn} />
                                 <button type="submit" className="btn btn-secondary" disabled={disableSubmitBtn}>Book</button>
                             </form>

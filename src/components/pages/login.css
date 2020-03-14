@@ -3,3 +3,15 @@
 * @author Eduardo Pereira do Carmo
 * @link https://github.com/eduardopcarmo
 **************************************************************/
+@media only screen and (min-width: 768px){
+    .content__session-col.content__login{
+        grid-template-columns: auto 500px auto;
+    }
+
+    .content__session-col.content__login > .form__horizontal{
+        background-color: var(--clr-light);
+        padding: 1rem;
+        border-radius: var(--br-default);
+        grid-column-start: 2;
+    }
+}
