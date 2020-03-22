@@ -11,9 +11,14 @@ class Footer extends Component{
             <footer className="footer">
                 <ContactForm />
                 <div className="footer_links">
-                    <a href="https://github.com/oh-my-code" rel="noopener noreferrer" target="_blank">(C) Alexander Vasilyev</a>
-                    <a href="https://github.com/eduardopcarmo" rel="noopener noreferrer" target="_blank">(C) Eduardo Pereira do Carmo</a>
-                    <Link to="/Dashboard" className="footer__link">Login</Link>
+                    <p>
+                        <a href="https://github.com/oh-my-code" rel="noopener noreferrer" target="_blank">(C) Alexander Vasilyev</a>
+                        &nbsp;/&nbsp;
+                        <a href="https://github.com/eduardopcarmo" rel="noopener noreferrer" target="_blank">(C) Eduardo Pereira do Carmo</a>
+                    </p>
+                    <p>
+                        <Link to="/Dashboard" className="footer__link">Login</Link>
+                    </p>
                 </div>
             </footer>
         );

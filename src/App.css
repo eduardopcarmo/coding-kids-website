@@ -87,10 +87,15 @@ body {
 
 .content__session-title-big {
   color: var(--clr-secondary);
-  background: linear-gradient(90deg, var(--clr-primary) 0.6rem, transparent 0.6rem);
   text-align: left;
-  margin: 0 0 1.7rem 0;
+  margin: 3rem 0 2rem 0; /*0 0 1.7rem 0;*/
   padding-left: 1rem;
+
+  padding-left: 1rem;
+  background-image: url('./assets/img/box__title_bg_bottom.png'), url('./assets/img/box__title_bg.png');
+  background-position: left bottom, left top;
+  background-repeat: no-repeat;
+  background-size: 0.6rem;
 }
 
 .hidden-mobile{
@@ -176,6 +181,11 @@ header {
   font-size: 0.7rem;
 }
 
+.footer > .contactForm > .content__session{
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
 /**************************************************************
 * Box
 **************************************************************/
@@ -193,7 +203,10 @@ header {
   line-height: 1.22;
   margin: 1.7rem 0 1.7rem 0;
   padding-left: 1rem;
-  background: linear-gradient(90deg, var(--clr-primary) 0.6rem, transparent 0.6rem);
+  background-image: url('./assets/img/box__title_bg_bottom.png'), url('./assets/img/box__title_bg.png');
+  background-position: left bottom, left top;
+  background-repeat: no-repeat;
+  background-size: 0.6rem;
 }
 
 .box__title-small {
@@ -293,8 +306,9 @@ header {
 .form__horizontal>select,
 .form__horizontal>input,
 .form__horizontal>textarea {
-  border: 0.5px solid var(--clr-black);
+  border: none;
 }
+
 
 /**************************************************************
 * Error Feedback box
@@ -353,6 +367,15 @@ header {
   **************************************************************/
   .hidden-mobile{
     display: initial;
+  }
+
+  /**************************************************************
+  * Form 
+  **************************************************************/
+  .form__horizontal>label{
+    font-size: 0.7rem;
+    font-weight: 400;
+    margin-top: 0;;
   }
 }
 

@@ -3,9 +3,9 @@
 * @author Eduardo Pereira do Carmo
 * @link https://github.com/eduardopcarmo
 **************************************************************/
-.content__session.blog_title>.content__session-title.content__session-title-big {
+/*.content__session.blog_title>.content__session-title.content__session-title-big {
     margin: 0;
-}
+}*/
 
 .blog__posts>article>h2 {
     background-color: var(--clr-light);

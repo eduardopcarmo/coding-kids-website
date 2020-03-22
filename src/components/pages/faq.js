@@ -16,7 +16,7 @@ class Faq extends Component{
                         return (
                             <div className="box" key={index}>
                                 <h2 className="box__title box__title-small">{question.title}</h2>
-                                <p className="box__text">{question.answer}</p>
+                                <div className="box__text" dangerouslySetInnerHTML={{ __html: question.answer }}></div>
                             </div>
                         ) 
                     })

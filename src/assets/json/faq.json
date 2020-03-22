@@ -1,44 +1,20 @@
 {
     "questions": [
         {
-            "title": "Question 1",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quam felis, facilisis sit amet ornare ut, mattis sit amet dolor. Praesent pellentesque nisi at massa facilisis, sit amet ornare nulla cursus. Aenean est ipsum, mattis quis ligula et, aliquam lobortis mauris. Praesent rhoncus urna sed hendrerit blandit."
+            "title": "Do I have to stay with a child during the class?",
+            "answer": "<p>No. There's a Marine Gateway with many stores and restaurants to keep the parents busy during the sessions.</p>"
         },
         {
-            "title": "Question 2",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quam felis, facilisis sit amet ornare ut, mattis sit amet dolor. Praesent pellentesque nisi at massa facilisis, sit amet ornare nulla cursus. Aenean est ipsum, mattis quis ligula et, aliquam lobortis mauris. Praesent rhoncus urna sed hendrerit blandit."
+            "title": "What should I bring to a class?",
+            "answer": "<p>Please bring the following to every session:</p> <ul style='list-style: disc;margin: 1rem;'><li>Required: an iPad / Androing tablet / a laptop</li><li>Optional: an iPhone or Android phone for VR experience (we provide Wi-Fi connection and VR headset)</li><li> Optional: a water bottle and a snack for a short break in the middle</li></ul>"
         },
         {
-            "title": "Question 3",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quam felis, facilisis sit amet ornare ut, mattis sit amet dolor. Praesent pellentesque nisi at massa facilisis, sit amet ornare nulla cursus. Aenean est ipsum, mattis quis ligula et, aliquam lobortis mauris. Praesent rhoncus urna sed hendrerit blandit."
+            "title": "Is Virtual Reality safe for kids? How much time will my child be wearing a headset?",
+            "answer": "<p>The duration of wearing a VR headset is normally less than 5 minutes within each session. Children wear a headset to look at the world they created on a computer.</p><p style='margin-top: 1rem;'>One of the biggest concerns is the impact VR tech could have on kids' eyes. Parents have long told children that staring at a screen will make their eyes go square, but the American Academy of Ophthalmology says there is no evidence that long exposure to screens can cause permanent damage.</p>"
         },
         {
-            "title": "Question 4",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quam felis, facilisis sit amet ornare ut, mattis sit amet dolor. Praesent pellentesque nisi at massa facilisis, sit amet ornare nulla cursus. Aenean est ipsum, mattis quis ligula et, aliquam lobortis mauris. Praesent rhoncus urna sed hendrerit blandit."
-        },
-        {
-            "title": "Question 5",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quam felis, facilisis sit amet ornare ut, mattis sit amet dolor. Praesent pellentesque nisi at massa facilisis, sit amet ornare nulla cursus. Aenean est ipsum, mattis quis ligula et, aliquam lobortis mauris. Praesent rhoncus urna sed hendrerit blandit."
-        },
-        {
-            "title": "Question 6",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quam felis, facilisis sit amet ornare ut, mattis sit amet dolor. Praesent pellentesque nisi at massa facilisis, sit amet ornare nulla cursus. Aenean est ipsum, mattis quis ligula et, aliquam lobortis mauris. Praesent rhoncus urna sed hendrerit blandit."
-        },
-        {
-            "title": "Question 7",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quam felis, facilisis sit amet ornare ut, mattis sit amet dolor. Praesent pellentesque nisi at massa facilisis, sit amet ornare nulla cursus. Aenean est ipsum, mattis quis ligula et, aliquam lobortis mauris. Praesent rhoncus urna sed hendrerit blandit."
-        },
-        {
-            "title": "Question 8",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quam felis, facilisis sit amet ornare ut, mattis sit amet dolor. Praesent pellentesque nisi at massa facilisis, sit amet ornare nulla cursus. Aenean est ipsum, mattis quis ligula et, aliquam lobortis mauris. Praesent rhoncus urna sed hendrerit blandit."
-        },
-        {
-            "title": "Question 9",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quam felis, facilisis sit amet ornare ut, mattis sit amet dolor. Praesent pellentesque nisi at massa facilisis, sit amet ornare nulla cursus. Aenean est ipsum, mattis quis ligula et, aliquam lobortis mauris. Praesent rhoncus urna sed hendrerit blandit."
-        },
-        {
-            "title": "Question 10",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quam felis, facilisis sit amet ornare ut, mattis sit amet dolor. Praesent pellentesque nisi at massa facilisis, sit amet ornare nulla cursus. Aenean est ipsum, mattis quis ligula et, aliquam lobortis mauris. Praesent rhoncus urna sed hendrerit blandit."
+            "title": "Are you playing MineCraft with children during the lesson?",
+            "answer": "<p>No, we never play MineCraft game. We're using MineCraft ideas, concepts and characters to engage students and help them grasp programing. MineCraft is great because as well as coding it's about building things.</p>"
         }
     ]
 }
