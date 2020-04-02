@@ -218,15 +218,15 @@ class Curriculum extends Component{
                         <div className="content__grades-box">
                             <div className="box">
                                 <h2 className="box__title box__title-small">Virtual Reality (VR)</h2>
-                                <p className="box__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                <p className="box__text">Unique and exciting technology of virtual reality developed by Canadian company C3D engages and motivates children to explore and grasp coding knowledge.</p>
                             </div>
                             <div className="box">
                                 <h2 className="box__title box__title-small">Gamification</h2>
-                                <p className="box__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                <p className="box__text">Children's favourite characters like MineCraft help them to start loving coding from an early age.</p>
                             </div>
                             <div className="box">
                                 <h2 className="box__title box__title-small">Computer Skills</h2>
-                                <p className="box__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                <p className="box__text">Keyboarding - Typing practice will help your child feel confident with computers and make coding learning easier and more fun. How computer and Internet works.</p>
                             </div>
                         </div>
                     </div>

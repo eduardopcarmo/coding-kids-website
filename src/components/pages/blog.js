@@ -37,7 +37,7 @@ class Blog extends Component{
                     <article>
                         <h2>Map with wages by province</h2>
                         <div className="content__session">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non pellentesque odio. Suspendisse at rhoncus turpis, eu molestie turpis. Suspendisse sed nisi quis erat mattis rutrum eget cursus quam.</p>
+                            <p>You can see here the top 5 best-paid job positions in the tech field and the wage in all Canadian provinces. Try click/touch on the province and you can see the wages and compare results.</p>
                             <WagesByProvince />
                             <aside>
                                 <p>Source: Government of Canada - Job Bank - Trend analysis, Compare wages</p>
